@@ -1,0 +1,25 @@
+.statistics {
+  margin-top: 50px;
+  border-radius: 35px;
+  background-color: bisque;
+}
+
+.title {
+  margin: 30px 60px;
+}
+
+.stat-list {
+  background-color: aquamarine;
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  border-radius: 0px 0px 35px 35px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './FriendList.css';
 
 export const friendsArr = [
   {
@@ -33,10 +34,24 @@ export const friendsArr = [
   },
 ];
 
+const getBgColor = isOnline => {
+  switch (isOnline) {
+    case false:
+      return 'red';
+    case true:
+      return 'green';
+    default:
+      throw new Error(`Unsupported variant prop value - ${isOnline}`);
+  }
+};
+
 export const FriendListItem = ({ avatar, name, isOnline }) => (
   <li class="item">
-    <span class="status"></span>
-    <img class="avatar" src={avatar} alt="User avatar" width="48" />
+    <span
+      style={{ backgroundColor: getBgColor(isOnline) }}
+      class="status"
+    ></span>
+    <img class="avatar" src={avatar} alt="User avatar" width="150" />
     <p class="name">{name}</p>
   </li>
 );
@@ -53,4 +68,8 @@ export const FriendList = ({ friends }) => (
   </ul>
 );
 
-// Trzeba przemapować po obiketach tablicy friends i na kazdy obiekt friend wyciągnąć propsy
+FriendList.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  isOnline: PropTypes.bool,
+};

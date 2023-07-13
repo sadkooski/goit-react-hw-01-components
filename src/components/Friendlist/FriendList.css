@@ -1,0 +1,25 @@
+.friend-list {
+  background-color: blanchedalmond;
+  border-radius: 35px;
+  padding: 40px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  background-color: burlywood;
+  border-radius: 35px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.status {
+  background-color: aqua;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.avatar {
+  margin: 0 30px;
+}

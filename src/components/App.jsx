@@ -11,8 +11,10 @@ export const App = () => {
   return (
     <div
       style={{
+        display: `flex`,
+        flexDirection: `column`,
+        backgroundColor: `lightgray`,
         height: '100vh',
-        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -27,7 +29,6 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics title="Upload stats" stats={data} />
-      <Statistics stats={data} />
       <FriendList friends={friendsArr} />
       <TransactionHistory items={transactionsArr} />
     </div>

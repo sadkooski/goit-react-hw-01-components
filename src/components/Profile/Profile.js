@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Profile.css';
 
 const json = `{
   "username": "Jacques Gluke",
@@ -12,7 +13,6 @@ const json = `{
   }
 }`;
 
-// import user from './user.json';
 
 export const user = JSON.parse(json);
 
@@ -21,7 +21,7 @@ export const Profile = ({ username, tag, location, avatar, stats }) => (
     <div class="description">
       <img src={avatar} alt="User avatar" class="avatar" />
       <p class="name">{username}</p>
-      <p class="tag">{tag}</p>
+      <p class="tag">@{tag}</p>
       <p class="location">{location}</p>
     </div>
 
