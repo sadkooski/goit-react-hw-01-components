@@ -1,17 +1,17 @@
-.transaction-history {
+.transactionHistory {
   background-color: cadetblue;
   padding: 30px;
   border-radius: 35px;
 }
 
-.transaction-history thead {
+.transactionHistory thead {
 }
 
-.transaction-history th {
+.transactionHistory th {
   padding: 15px;
   background-color: darkgreen;
 }
 
-.transaction-history tbody {
+.transactionHistory tbody {
   background-color: azure;
 }

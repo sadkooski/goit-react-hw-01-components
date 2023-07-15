@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Statistics.css';
+import css from './Statistics.module.css';
 
 export const data = [
   { id: 'id-1', label: '.docx', percentage: 22 },
@@ -8,8 +8,6 @@ export const data = [
   { id: 'id-4', label: '.psd', percentage: 47 },
   { id: 'id-5', label: '.pdf', percentage: 10 },
 ];
-
-console.log(data);
 
 const getBgcolor = variant => {
   switch (variant) {
@@ -28,43 +26,48 @@ const getBgcolor = variant => {
 
 export const StatisticsComponent = ({ label, percentage, variant }) => {
   return (
-    <li style={{ backgroundColor: getBgcolor(variant) }} class="item">
-      <span class="label">{label}</span>
-      <span class="percentage">{percentage}%</span>
+    <li style={{ backgroundColor: getBgcolor(variant) }} className={css.item}>
+      <span className={css.label}>{label}</span>
+      <span className={css.percentage}>{percentage}%</span>
     </li>
   );
 };
 
-export const Statistics = ({ title, stats }) => (
-  <section class="statistics">
-    <h2 class="title">{title}</h2>
+export const Statistics = ({ title, stats }) => {
+  return (
+    <section className={css.statistics}>
+      <h2 className={css.title}>{title}</h2>
 
-    <ul class="stat-list">
-      <StatisticsComponent
-        label={stats[0].label}
-        percentage={stats[0].percentage}
-        variant="green"
-      />
-      <StatisticsComponent
-        label={stats[1].label}
-        percentage={stats[1].percentage}
-        variant="red"
-      />
-      <StatisticsComponent
-        label={stats[2].label}
-        percentage={stats[2].percentage}
-        variant="blue"
-      />
-      <StatisticsComponent
-        label={stats[3].label}
-        percentage={stats[3].percentage}
-        variant="yellow"
-      />
-    </ul>
-  </section>
-);
+      <ul className={css.statList}>
+        <StatisticsComponent
+          label={stats[0].label}
+          percentage={stats[0].percentage}
+          variant="green"
+        />
+        <StatisticsComponent
+          label={stats[1].label}
+          percentage={stats[1].percentage}
+          variant="red"
+        />
+        <StatisticsComponent
+          label={stats[2].label}
+          percentage={stats[2].percentage}
+          variant="blue"
+        />
+        <StatisticsComponent
+          label={stats[3].label}
+          percentage={stats[3].percentage}
+          variant="yellow"
+        />
+      </ul>
+    </section>
+  );
+};
 
 Statistics.propTypes = {
+  stats: PropTypes.array,
   title: PropTypes.string,
-  stats: PropTypes.number,
+  label: PropTypes.string,
+  percentage: PropTypes.number,
+  variant: PropTypes.string,
 };

@@ -11,10 +11,10 @@ export const App = () => {
   return (
     <div
       style={{
+        padding: `80px`,
         display: `flex`,
         flexDirection: `column`,
         backgroundColor: `lightgray`,
-        height: '100vh',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,

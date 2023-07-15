@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './FriendList.css';
+import css from './FriendList.module.css';
 
 export const friendsArr = [
   {
@@ -45,28 +45,32 @@ const getBgColor = isOnline => {
   }
 };
 
-export const FriendListItem = ({ avatar, name, isOnline }) => (
-  <li class="item">
-    <span
-      style={{ backgroundColor: getBgColor(isOnline) }}
-      class="status"
-    ></span>
-    <img class="avatar" src={avatar} alt="User avatar" width="150" />
-    <p class="name">{name}</p>
-  </li>
-);
+export const FriendListItem = ({ avatar, name, isOnline }) => {
+  return (
+    <li className={css.item}>
+      <span
+        style={{ backgroundColor: getBgColor(isOnline) }}
+        className={css.status}
+      ></span>
+      <img className={css.avatar} src={avatar} alt="User avatar" width="150" />
+      <p className={css.name}>{name}</p>
+    </li>
+  );
+};
 
-export const FriendList = ({ friends }) => (
-  <ul class="friend-list">
-    {friends.map(friend => (
-      <FriendListItem
-        avatar={friend.avatar}
-        name={friend.name}
-        isOnline={friend.isOnline}
-      />
-    ))}
-  </ul>
-);
+export const FriendList = ({ friends }) => {
+  return (
+    <ul className={css.friendList}>
+      {friends.map(friend => (
+        <FriendListItem
+          avatar={friend.avatar}
+          name={friend.name}
+          isOnline={friend.isOnline}
+        />
+      ))}
+    </ul>
+  );
+};
 
 FriendList.propTypes = {
   avatar: PropTypes.string,
